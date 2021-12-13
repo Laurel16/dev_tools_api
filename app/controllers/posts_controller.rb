@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
   @posts = Post.order('date ASC')
-
+  render json: @posts
   end
 
   def create
