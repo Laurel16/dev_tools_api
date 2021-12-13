@@ -5,6 +5,4 @@ class CategoriesController < ApplicationController
   render json: @categories
   end
 
-  def
-
 end
