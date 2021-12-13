@@ -1,19 +1,24 @@
 class PagesController < ApplicationController
 
   def front
-    @category = ["Front Tools"]
-    render json: @category
+    category = "Front Tools"
+    @posts = Post.where("category like ?", category)
+    render json: @posts
+
+
   end
 
   def nice
-    @category = ["Nice Tutoriels"]
-    render json: @category
+      category = ["Nice Tutoriels"]
+     @posts = Post.where("category like ?", category)
+      render json: @posts
   end
 
 
   def web
-    @category = ["Web Culture"]
-    render json: @category
+      category = ["Web Culture"]
+     @posts = Post.where("category like ?", category)
+    render json: @posts
   end
 
 
