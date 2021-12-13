@@ -1,0 +1,8 @@
+<h1 class="logo">Posts</h1>
+
+<%= javascript_pack_tag 'Posts' %>
+
+<%= content_tag :div,
+  id: "posts_data",
+  data: @posts.to_json do %>
+<% end %>

@@ -1,0 +1,51 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+.post {
+  padding: 20px 0;
+  border-bottom: solid 1px #EAEAEA;
+}
+
+
+h2.post-title {
+  font-weight: 300;
+}
+
+.post-date {
+  color: #999999;
+  margin: 5px 0;
+}
+
+.post-category {
+  color: #FD7E14;
+  margin: 5px 0;
+}
+
+.post-hashtag {
+  color: #999999;
+  margin-right: 5px;
+}
+
+figure {
+  padding: 35% 0 0;
+  margin: 0 0 30px;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  @media (max-width: 800px) {
+    margin-bottom: 20px;
+  }
+}
