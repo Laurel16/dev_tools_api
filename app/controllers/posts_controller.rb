@@ -21,15 +21,33 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    render json: @post
+    render json: @post.as_json(except: :user_id, include: {user: {only: [:name, :nickname, :image]}}).merge(currentUserCanEdit: @post.user.email == request.headers['uid'])
   end
 
 
+  def update
+    @post = current_user.events.find(params[:id])
+    if @post.update(post_params)
+      render json: @post
+    else
+    render json: @post.errors, status: :unprocessable_entity
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      head :no_content, status: :ok
+    else
+      render json: @post.errors, status: :unprocessable_entity
+  end
+end
+
+end
 
 private
   def post_params
     params[:post][:hashtag] ||= []
-    params.require(:post).permit(:title, :date, :category, :content, :lead, :hashtag, :image)
+    params.require(:post).permit(:title, :date, :category, :content, :lead, :hashtag, :image, :user_id)
   end
 
   def set_params

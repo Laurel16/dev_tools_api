@@ -10,6 +10,7 @@
 posts = Post.create([
       {
     "id": 1,
+    "user_id": 4,
     "title": "Best color pickers",
     "date": "2020-05-31",
     "category": "Front Tools",
@@ -20,6 +21,7 @@ posts = Post.create([
   },
   {
     "id": 2,
+    "user_id": 4,
     "title": "Apple iPhone at risk of hacking through email app",
     "date": "2020-04-23",
     "category": "Front Tools",
@@ -30,6 +32,7 @@ posts = Post.create([
   },
   {
     "id": 3,
+    "user_id": 4,
     "title": "Twitter bans incitement to attack 5G towers",
     "date": "2020-04-23",
     "category": "Front Tools",
@@ -41,6 +44,7 @@ posts = Post.create([
   {
     "id": 4,
     "title": "The history of the web",
+    "user_id": 4,
     "date": "2020-04-23",
     "category": "Web Culture",
     "hashtag": ["#css", "#color"],
@@ -50,6 +54,7 @@ posts = Post.create([
   },
   {
     "id": 5,
+    "user_id": 4,
     "title": "Antarctica's A-68: Is the world's biggest iceberg about to break up?",
     "date": "2020-04-23",
     "category": "Web Culture",
@@ -60,6 +65,7 @@ posts = Post.create([
   },
   {
     "id": 6,
+    "user_id": 4,
     "title": "Climate change: 2019 was Europe's warmest year on record",
     "date": "2020-04-22",
     "category": "Web Culture",
@@ -70,6 +76,7 @@ posts = Post.create([
   },
   {
     "id": 7,
+    "user_id": 4,
     "title": "National Theatre 'haemorrhaging money'",
     "date": "2020-04-23",
     "category": "Nice Tutoriels",
@@ -80,6 +87,7 @@ posts = Post.create([
   },
   {
     "id": 8,
+    "user_id": 4,
     "title": "Spotify allows fans to pay musicians directly",
     "date": "2020-04-23",
     "category": "Nice Tutoriels",
@@ -90,6 +98,7 @@ posts = Post.create([
   },
   {
     "id": 9,
+    "user_id": 4,
     "title": "What can we learn from Robinson Crusoe writer's 1722 plague book?",
     "date": "2020-04-23",
     "category": "Nice Tutoriels",
