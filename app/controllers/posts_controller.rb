@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
 
   def update
-    @post = current_user.events.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     if @post.update(post_params)
       render json: @post
     else
@@ -47,7 +47,7 @@ end
 private
   def post_params
     params[:post][:hashtag] ||= []
-    params.require(:post).permit(:title, :date, :category, :content, :lead, :hashtag, :image, :user_id)
+    params.require(:post).permit(:title, :date, :category, :content, :lead, :image, :user_id)
   end
 
   def set_params
