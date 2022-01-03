@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   before_action :set_post, only: [ :show, :edit, :update, :destroy]
 
-  before_action :set_params, only: [:index]
+  before_action :set_params
 
   def index
   @posts = Post.order('date ASC')
@@ -32,17 +32,22 @@ class PostsController < ApplicationController
     else
     render json: @post.errors, status: :unprocessable_entity
   end
+end
 
   def destroy
     @post = Post.find(params[:id])
-    if @post.destroy
-      head :no_content, status: :ok
-    else
-      render json: @post.errors, status: :unprocessable_entity
+    if @post.user == current_user
+      if @post.destroy
+        head :no_content, status: :ok
+      else
+        render json: @post.errors, status: :unprocessable_entity
+    end
+  else
+     render json: @post.errors, status: :unprocessable_entity
   end
-end
+  end
 
-end
+
 
 private
   def post_params
